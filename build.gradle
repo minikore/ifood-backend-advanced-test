@@ -15,6 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'checkstyle'
 
 group = 'com.minikore'
 version = '0.0.1-SNAPSHOT'
@@ -41,6 +42,20 @@ dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
+}
+
+checkstyle {
+    toolVersion '8.12'
+    configFile file("checkstyle_rules.xml")
+    maxWarnings 0
+    maxErrors 0
+    ignoreFailures false
+}
+checkstyleMain {
+    source = 'src/main/java'
+}
+checkstyleTest {
+    source = 'src/test/java'
 }
 
 idea {

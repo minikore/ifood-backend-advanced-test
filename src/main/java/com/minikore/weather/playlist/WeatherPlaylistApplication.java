@@ -4,11 +4,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.web.reactive.config.EnableWebFlux;
+import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux;
 
 import java.util.TimeZone;
 
-@EnableWebFlux
-@SpringBootApplication(scanBasePackages = "com.minikore")
+//@EnableWebFlux
+@EnableSwagger2WebFlux
+@SpringBootApplication
 public class WeatherPlaylistApplication {
 
     public static void main(String[] args) {

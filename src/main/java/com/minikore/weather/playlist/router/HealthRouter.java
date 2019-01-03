@@ -1,4 +1,4 @@
-package com.minikore.weather.playlist.routers;
+package com.minikore.weather.playlist.router;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;

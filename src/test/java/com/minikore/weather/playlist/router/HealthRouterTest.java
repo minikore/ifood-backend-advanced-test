@@ -1,4 +1,4 @@
-package com.minikore.weather.playlist.routers;
+package com.minikore.weather.playlist.router;
 
 import com.minikore.weather.playlist.WeatherPlaylistApplication;
 import org.junit.Before;

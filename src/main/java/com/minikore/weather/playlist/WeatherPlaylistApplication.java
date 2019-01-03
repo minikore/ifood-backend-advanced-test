@@ -6,9 +6,10 @@ import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.web.reactive.config.EnableWebFlux;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux;
 
+import javax.annotation.PostConstruct;
 import java.util.TimeZone;
 
-//@EnableWebFlux
+@EnableWebFlux
 @EnableSwagger2WebFlux
 @SpringBootApplication
 public class WeatherPlaylistApplication {
@@ -17,7 +18,8 @@ public class WeatherPlaylistApplication {
         SpringApplication.run(WeatherPlaylistApplication.class, args);
     }
 
-    private static void setupEnvironment() {
+    @PostConstruct
+    public void setupEnvironment() {
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
         System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME, currentEnv());
     }
@@ -26,7 +28,7 @@ public class WeatherPlaylistApplication {
         String scope = System.getenv("SCOPE");
 
         if (scope == null) {
-            return "development";
+            return "test";
         }
 
         return scope;

@@ -1,4 +1,4 @@
-package com.minikore.weather.playlist.model;
+package com.minikore.weather.playlist.controller.api.response;
 
 import lombok.*;
 
@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 @Builder
-public class Playlist {
+public class PlaylistResponse {
 
     @Singular
     private List<String> songs;

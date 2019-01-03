@@ -10,4 +10,6 @@ public class PlaylistResponse {
 
     @Singular
     private List<String> songs;
+
+    private Double temp;
 }

@@ -1,0 +1,18 @@
+logging:
+  level:
+    ROOT: info
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 1000
+        loggerLevel: full
+
+openweather:
+  name: openweather
+  api:
+    url: http://api.openweathermap.org/data/2.5/weather
+    units: metric
+    appid: f17fff2019827c6de45f08a6d799ac7b

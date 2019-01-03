@@ -5,9 +5,11 @@ import lombok.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+@AllArgsConstructor
 @Builder(toBuilder = true)
-@AllArgsConstructor(access = AccessLevel.PACKAGE)
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@Getter
+@Setter
+@NoArgsConstructor
 public class GeoCoordinatesParamRequest {
 
     @Valid

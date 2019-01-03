@@ -2,6 +2,7 @@ package com.minikore.weather.playlist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.web.reactive.config.EnableWebFlux;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux;
@@ -9,8 +10,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2WebFlux;
 import javax.annotation.PostConstruct;
 import java.util.TimeZone;
 
-@EnableWebFlux
+@EnableFeignClients
 @EnableSwagger2WebFlux
+@EnableWebFlux
 @SpringBootApplication
 public class WeatherPlaylistApplication {
 

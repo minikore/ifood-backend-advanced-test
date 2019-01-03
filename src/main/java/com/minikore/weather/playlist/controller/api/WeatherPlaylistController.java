@@ -20,11 +20,11 @@ public class WeatherPlaylistController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     private Mono<PlaylistResponse> getByCity(@Valid @ModelAttribute CityNameParamRequest params) {
-        return Mono.just(PlaylistResponse.builder().song("MiniKore").build());
+        return service.getByCity(params.getCity());
     }
 
     @GetMapping(value = "coordinates", produces = MediaType.APPLICATION_JSON_VALUE)
     private Mono<PlaylistResponse> getByGeoCoordinates(@Valid @ModelAttribute GeoCoordinatesParamRequest params) {
-        return Mono.just(PlaylistResponse.builder().song("MiniKore").build());
+        return service.getByGeoCoordinates(params.getLat(), params.getLon());
     }
 }
